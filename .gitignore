@@ -1,1 +1,17 @@
+# Environment variables
 .env
+
+# Weights & Biases logs
+wandb/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+
+# VS Code settings (if you use VS Code)
+.vscode/
