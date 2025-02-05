@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  grpo:
+    image: my-grpo-training
+    build: .
+    env_file:
+      - ./GRPO/.env
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

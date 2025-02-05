@@ -1,0 +1,15 @@
+{"time":"2025-02-05T20:23:02.5354173+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"C:\\Users\\aluja\\GRPO\\wandb\\run-20250205_202301-no6kce2d\\logs\\debug-core.log"}
+{"time":"2025-02-05T20:23:04.5552815+01:00","level":"INFO","msg":"created new stream","id":"no6kce2d"}
+{"time":"2025-02-05T20:23:04.5553327+01:00","level":"INFO","msg":"stream: started","id":"no6kce2d"}
+{"time":"2025-02-05T20:23:04.5554454+01:00","level":"INFO","msg":"handler: started","stream_id":"no6kce2d"}
+{"time":"2025-02-05T20:23:04.5554454+01:00","level":"INFO","msg":"sender: started","stream_id":"no6kce2d"}
+{"time":"2025-02-05T20:23:04.5554454+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"no6kce2d"}
+{"time":"2025-02-05T20:23:04.9410499+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-05T20:29:45.7396192+01:00","level":"INFO","msg":"stream: closing","id":"no6kce2d"}
+{"time":"2025-02-05T20:29:45.7475392+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-05T20:29:45.7515222+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-05T20:29:46.566049+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-05T20:29:47.0620889+01:00","level":"INFO","msg":"handler: closed","stream_id":"no6kce2d"}
+{"time":"2025-02-05T20:29:47.0620889+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"no6kce2d"}
+{"time":"2025-02-05T20:29:47.0620889+01:00","level":"INFO","msg":"sender: closed","stream_id":"no6kce2d"}
+{"time":"2025-02-05T20:29:47.0625317+01:00","level":"INFO","msg":"stream: closed","id":"no6kce2d"}

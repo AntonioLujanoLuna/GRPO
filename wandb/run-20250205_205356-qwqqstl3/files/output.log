@@ -1,0 +1,70 @@
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                                         | 0/1868 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+  1%|▋                                                            | 20/1868 [06:58<12:14:10, 23.84s/it]Traceback (most recent call last):
+{'loss': 0.139, 'grad_norm': 0.4234752953052521, 'learning_rate': 9.957173447537474e-06, 'completion_length': 120.7125, 'rewards/correctness_reward': 0.0, 'rewards/format_reward': 0.0375, 'rewards/strict_format_reward': 0.0, 'rewards/numeric_reward': 0.0, 'rewards/conciseness_reward': 0.0, 'rewards/repetition_penalty': -0.359375, 'rewards/cot_clarity_reward': 0.0012500000186264515, 'reward': -0.3206250000745058, 'reward_std': 0.13523417003452778, 'kl': 3.4754204839468, 'epoch': 0.01}
+{'loss': 0.0845, 'grad_norm': 0.39599475264549255, 'learning_rate': 9.903640256959315e-06, 'completion_length': 118.4125, 'rewards/correctness_reward': 0.0, 'rewards/format_reward': 0.03125, 'rewards/strict_format_reward': 0.0, 'rewards/numeric_reward': 0.0, 'rewards/conciseness_reward': 0.0, 'rewards/repetition_penalty': -0.346875, 'rewards/cot_clarity_reward': 0.0, 'reward': -0.315625, 'reward_std': 0.13700193576514721, 'kl': 2.1114847347140313, 'epoch': 0.01}
+  File "<frozen runpy>", line 198, in _run_module_as_main                     | 0/1319 [00:00<?, ?it/s]
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\aluja\GRPO\GRPO\__main__.py", line 573, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\aluja\GRPO\GRPO\__main__.py", line 538, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\trainer.py", line 2171, in train
+    return inner_training_loop(
+        args=args,
+    ...<2 lines>...
+        ignore_keys_for_eval=ignore_keys_for_eval,
+    )
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\trainer.py", line 2598, in _inner_training_loop
+    self._maybe_log_save_evaluate(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval, start_time
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\trainer.py", line 3071, in _maybe_log_save_evaluate
+    metrics = self._evaluate(trial, ignore_keys_for_eval)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\trainer.py", line 3025, in _evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "C:\Users\aluja\GRPO\GRPO\__main__.py", line 396, in evaluate
+    eval_acc = generate_gsm8k(
+        self.model,
+    ...<3 lines>...
+        self.args.max_completion_length
+    )
+  File "C:\Users\aluja\GRPO\GRPO\__main__.py", line 345, in generate_gsm8k
+    output = model.generate(
+        input_ids=padded_input_ids,
+        attention_mask=attn_mask,
+        generation_config=generation_config,
+    )
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\peft\peft_model.py", line 1838, in generate
+    outputs = self.base_model.generate(*args, **kwargs)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\generation\utils.py", line 2255, in generate
+    result = self._sample(
+        input_ids,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\generation\utils.py", line 3254, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\transformers\models\gpt2\modeling_gpt2.py", line 1083, in forward
+    lm_logits = self.lm_head(hidden_states)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\aluja\GRPO\venv\Lib\site-packages\torch\nn\modules\linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.10 GiB. GPU 0 has a total capacity of 4.00 GiB of which 160.25 MiB is free. Of the allocated memory 2.72 GiB is allocated by PyTorch, and 304.69 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
